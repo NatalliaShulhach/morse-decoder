@@ -38,7 +38,8 @@ const MORSE_TABLE = {
 };
 
 function decode(expr) {
-   
+    let morseResult = "";
+
     while(expr.length / 10 != 0) {
         let binarySymbol = expr.slice(0,10);
         expr = expr.slice(10);
@@ -46,7 +47,6 @@ function decode(expr) {
         let morseLetter = "";
         binarySymbol = binarySymbol.slice(index);
 
-        let morseLetter = "";
         while (binarySymbol.length) {
             let symbol = "";
             switch(binarySymbol.slice(0,2)) {
